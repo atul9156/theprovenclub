@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "89749384-6d2f-4efb-8ff3-defe64dd3253",
+		"name": "URL Shortener API",
+		"description": "A collection for URL Shortener API endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32698412"
+	},
+	"item": [
+		{
+			"name": "Shorten URL",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "user",
+						"value": "user@example.com"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "url",
+							"value": "https://google.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/shortener/shorten",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"shortener",
+						"shorten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Redirect to URL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/shortener/redirect/ftvRmq",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"shortener",
+						"redirect",
+						"ftvRmq"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Analytics",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "user",
+						"value": "user@example.com"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/shortener/analytics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"shortener",
+						"analytics"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
